@@ -27,6 +27,15 @@ class Song
     end
 
     def self.genre_count
-        @@genres.select(genre).size
+        per_genre={}
+        @@genres.uniq.each {|genre|per_genre[genre]=@@genres.count(genre)}
+        per_genre
     end
+
+    def self.artist_count
+        per_artist={}
+        @@artists.uniq.each {|artist|per_artist[artist]=@@artists.count(artist)}
+        per_artist
+    end
+    
 end

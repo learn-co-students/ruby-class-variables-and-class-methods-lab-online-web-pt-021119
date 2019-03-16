@@ -36,9 +36,10 @@ class Song
   end
 
   def self.artist_count
-    @@artists.inject(Hash.new(0)) do |hash, e|
+    artist_hash = Hash.new(0)
+    @@artists.inject(artist_hash) do |hash, e|
       hash[e] += 1
-      hash
+      artist_hash
     end
   end
 
